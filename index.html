@@ -173,7 +173,7 @@ nav.scrolled {
 
 .hero-headline {
   font-family: var(--display);
-  font-size: clamp(4rem, 10vw, 12rem);
+  font-size: clamp(4rem, 8.5vw, 10rem);
   line-height: 0.92;
   color: var(--white);
   letter-spacing: 0.01em;
@@ -190,8 +190,6 @@ nav.scrolled {
   display: block;
   padding-left: 6vw;
   color: rgba(244,242,238,0.22);
-  white-space: nowrap;
-  font-size: 0.78em;
 }
 .hero-headline .line-3 { display: block; }
 
@@ -755,22 +753,11 @@ footer {
   nav { padding: 1.5rem; }
   .nav-links { display: none; }
   .hero { padding: 0 1.5rem 3rem; min-height: 65vh; justify-content: flex-end; gap: 1rem; }
-  .hero-location {
-  display: none;
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-style: italic;
-  color: rgba(244,242,238,0.6);
-  position: relative;
-  z-index: 2;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.5rem;
-}
-
-.hero-eyebrow { margin-bottom: 0; }
+  .hero-eyebrow { margin-bottom: 0; display: none; }
+  .hero-location { display: block; }
   .hero-rule-top { display: none; }
-  .hero-headline { font-size: clamp(2rem, 10vw, 4rem); }
-  .hero-headline .line-2 { white-space: normal; font-size: 0.72em; padding-left: 4vw; }
+  .hero-headline { font-size: clamp(2.5rem, 11vw, 5rem); }
+  .hero-headline .line-2 { white-space: nowrap; font-size: 0.65em; padding-left: 4vw; color: rgba(244,242,238,0.15) !important; }
   .hero-bottom { flex-direction: column; align-items: flex-start; gap: 2rem; }
   .statement { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 1.5rem; }
   .statement-label { writing-mode: horizontal-tb; transform: none; }
@@ -779,16 +766,29 @@ footer {
   .problem-item { grid-template-columns: 48px 1fr; gap: 1rem; display: flex; flex-direction: column; }
   .problem-num { font-size: 1rem; }
   .problem-desc { display: block; font-size: 0.8rem; margin-top: 0.25rem; }
-  .services-title-block { padding: 2.5rem 1.5rem 0; }
+  .services-title-block { padding: 1.5rem 1.5rem 0; }
+  .services-title-block .section-title { font-size: clamp(2rem, 10vw, 3.5rem); }
+  .services-title-block .section-title br { display: none; }
   .services-grid { grid-template-columns: 1fr; }
-  .service { padding: 2rem 1.5rem; border-right: none; border-bottom: 1px solid var(--rule); }
+  .service { padding: 1.5rem 1.5rem; border-right: none; border-bottom: 1px solid var(--rule); }
+  .service-name { font-size: clamp(1.6rem, 7vw, 2.2rem); margin-bottom: 0.5rem; }
+  .service-name br { display: none; }
+  .service-desc { margin-bottom: 1rem; font-size: 0.82rem; }
+  .service-includes { margin-bottom: 1rem; gap: 0.4rem; }
+  .service-index { margin-bottom: 0.75rem; }
   .story-columns { grid-template-columns: 1fr; }
   .story { padding: 3rem 1.5rem; }
+  .story-body { margin-bottom: 0.75rem; }
+  .story-columns { gap: 0; }
   .process { padding: 3rem 1.5rem; }
+  .process .section-title { font-size: clamp(2rem, 10vw, 3.5rem); }
+  .process .section-title br { display: none; }
   .process-steps { grid-template-columns: 1fr; }
   .process-step { border-right: none; border-bottom: 1px solid var(--rule); padding: 2rem 1.5rem; }
   .contact { grid-template-columns: 1fr; }
   .contact-left { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--rule); }
+  .contact-headline { font-size: clamp(2.5rem, 10vw, 4rem); line-height: 1; }
+  .contact-headline br { display: none; }
   .contact-right { padding: 3rem 1.5rem; }
   footer { padding: 1.75rem 1.5rem; }
   .cur, .cur-ring { display: none; }
@@ -877,12 +877,12 @@ footer {
 <section class="services" id="services">
   <div class="services-title-block reveal">
     <span class="section-eyebrow">Services</span>
-    <h2 class="section-title">TWO WAYS<br>IN</h2>
+    <h2 class="section-title">TWO WAYS IN</h2>
   </div>
   <div class="services-grid reveal">
     <div class="service">
       <span class="service-index">Service 01 of 02</span>
-      <h3 class="service-name">PROFILE<br>OVERHAUL</h3>
+      <h3 class="service-name">PROFILE <br>OVERHAUL</h3>
       <p class="service-desc">Your profile is the first impression. I will make it warm, human, and interesting — without making it feel like a performance.</p>
       <ul class="service-includes">
         <li>Full audit of your current profile</li>
@@ -893,7 +893,7 @@ footer {
     </div>
     <div class="service">
       <span class="service-index">Service 02 of 02</span>
-      <h3 class="service-name">1-ON-1<br>COACHING</h3>
+      <h3 class="service-name">1-ON-1 <br>COACHING</h3>
       <p class="service-desc">We will meet in person and do a mock date. Then I tell you exactly what's working and what isn't. You'll leave with two or three things that will change your next real date.</p>
       <ul class="service-includes">
         <li>In-person mock date at a real SF venue</li>
@@ -910,7 +910,7 @@ footer {
 <section class="story" id="story">
   <div class="story-inner reveal">
     <span class="section-eyebrow">About With Isa</span>
-    <h2 class="story-title">I'VE BEEN ON<br>THE OTHER SIDE</h2>
+    <h2 class="story-title">I'VE BEEN ON THE OTHER SIDE</h2>
     <div class="story-columns">
       <div class="story-col">
         <p class="story-body">Hi, I'm Isa! Glad you're here — I think you will be too.</p>
@@ -930,7 +930,7 @@ footer {
 <section class="process" id="process">
   <div class="reveal">
     <span class="section-eyebrow">How it works</span>
-    <h2 class="section-title">THREE<br>STEPS</h2>
+    <h2 class="section-title">THREE STEPS</h2>
   </div>
   <div class="process-steps reveal">
     <div class="process-step">
@@ -958,7 +958,7 @@ footer {
 <section class="contact" id="contact">
   <div class="contact-left reveal">
     <div>
-      <h2 class="contact-headline">GET<br>IN<br>TOUCH</h2>
+      <h2 class="contact-headline">GET <br>IN <br>TOUCH</h2>
       <p class="contact-body">I work with a small number of clients at a time — intentionally. Send me a note. If it seems like a good fit, I'll reach out to schedule a time to meet.</p>
     </div>
     <div class="contact-meta">
